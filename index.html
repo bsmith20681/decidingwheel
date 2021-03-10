@@ -12,21 +12,35 @@
     <header></header>
     <div class="container">
       <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <div id="wheelOfFortune">
+            <canvas id="wheel" width="300" height="300"></canvas>
+            <div id="spin">SPIN</div>
+          </div>
+        </div>
         <div class="col-md-6">
           <form>
             <div class="form-group">
               <input
                 type="text"
                 class="form-control"
-                placeholder="Enter item"
+                id="entryInput"
+                aria-describedby="emailHelp"
+                placeholder="Enter Item"
               />
             </div>
+            <a class="btn btn-primary" onclick="addEntry()">Submit</a>
           </form>
+          <div id="entries"></div>
         </div>
       </div>
     </div>
     <footer></footer>
+    <script src="/js/app.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script
+      src="https://kit.fontawesome.com/78ae06e93a.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
