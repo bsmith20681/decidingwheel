@@ -8,20 +8,13 @@ function addEntry() {
   } else {
     entryList.insertAdjacentHTML(
       "beforeend",
-      `<div class="entry-item"><i class="fas fa-bars"></i><p class="item">${entryValue}</p><i onclick="deleteEntry(this)" class="fas fa-trash"></i></div>`
+      `<div><div class="entry-item"><div class="entry-item-text"><i class="fas fa-bars fa-lg"></i><p class="item">${entryValue}</p></div><a onclick="deleteEntry(this)" class="btn btn-red">Delete</a></div><div class="entry-item-bottom-border"></div></div>`
     );
 
     entryInput.value = "";
   }
 
-  let entryArray = Array.from(document.querySelectorAll(".item")).map((x) => {
-    return {
-      text: x.innerHTML,
-    };
-  });
-  console.log(entryArray);
-
-  createWheel(entryArray);
+  createWheel();
 }
 
 window.addEventListener("keydown", function (e) {
@@ -32,7 +25,7 @@ window.addEventListener("keydown", function (e) {
 });
 
 function deleteEntry(e) {
-  e.parentElement.remove();
+  e.parentElement.parentElement.remove();
   let entryArray = Array.from(document.querySelectorAll(".item")).map((x) => {
     return {
       text: x.innerHTML,
@@ -40,18 +33,23 @@ function deleteEntry(e) {
   });
   console.log(entryArray);
 
-  createWheel(entryArray);
+  createWheel();
 }
 
-function createWheel(arr) {
+function createWheel() {
+  let entryArray = Array.from(document.querySelectorAll(".item")).map((x) => {
+    return {
+      text: x.innerHTML,
+    };
+  });
   theWheel = new Winwheel({
     canvasId: "wheel",
-    numSegments: arr.length,
+    numSegments: entryArray.length,
     outerRadius: 120,
     textFontSize: 20,
     fillStyle: "#e7706f",
 
-    segments: arr,
+    segments: entryArray,
 
     animation: {
       type: "spinToStop",

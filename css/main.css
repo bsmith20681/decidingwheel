@@ -1,18 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+:root {
+  --dark-purple: #745cfc;
+  --light-purple: #846fff;
+  --hot-pink: #ef308f;
+}
 .entry-item {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
   margin: 10px 0;
+  max-width: 542px;
 }
 
-.fa-trash {
-  color: red;
+.entry-item-text {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
-.fa-trash:hover {
-  cursor: pointer;
+.entry-item-text p {
+  margin: 0 15px;
+  background-color: var(--dark-purple);
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 0 5px 5px;
+}
+
+.entry-item p {
+  color: white;
+}
+
+.entry-item-bottom-border {
+  border-bottom: 1px solid #c4c4c4;
+  max-width: 541px;
+}
+
+.fa-bars {
+  color: white;
 }
 
 #wheel {
   display: block;
   color: blue;
+}
+
+/* buttons */
+.btn-white {
+  background-color: white;
+  color: var(--dark-purple);
+}
+
+.btn-red {
+  background-color: var(--hot-pink);
+  color: white;
+}
+
+/* nav styles */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-brand {
+  color: var(--dark-purple) !important;
+}
+
+/*Wheel area */
+.wheel-area {
+  padding: 30px 0;
+}
+.wheel-area-background {
+  background-color: var(--light-purple);
+  border-radius: 30px;
+}
+
+.wheel-area {
+  background-color: var(--dark-purple);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.form-control {
+  background-color: var(--dark-purple);
+  border: none;
+  color: white;
+}
+
+.form-group {
+  margin-right: 15px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+.form-control:focus {
+  background-color: var(--dark-purple);
+  border: none;
+  color: white;
 }
