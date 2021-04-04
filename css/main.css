@@ -4,6 +4,7 @@
   --light-purple: #846fff;
   --hot-pink: #ef308f;
 }
+
 .entry-item {
   display: flex;
   align-items: center;
@@ -38,10 +39,32 @@
 .fa-bars {
   color: white;
 }
+.fa-bars:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+/*drag and drop*/
+.entry-item-container.dragging {
+  opacity: 0.5;
+}
+
+#spinningWheel {
+  position: relative;
+}
 
 #wheel {
   display: block;
   color: blue;
+  margin: 0 auto;
+}
+
+#pointer {
+  width: 30px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 5px;
+  left: 48.4%;
 }
 
 /* buttons */
