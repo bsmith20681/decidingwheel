@@ -92,13 +92,13 @@ function createWheel() {
       text: x.innerHTML,
     };
   });
+
   theWheel = new Winwheel({
     canvasId: "wheel",
     responsive: true,
     numSegments: entryArray.length,
-    outerRadius: 280,
-    textFontSize: 20,
-    pointerAngle: 0,
+    //outerRadius: 280,
+    textFontSize: 28,
     fillStyle: "#e7706f",
     strokeStyle: "#ffffff",
 
@@ -113,19 +113,17 @@ function createWheel() {
     },
   });
 
-  drawTriangle();
-
   function alertPrize(indicatedSegment) {
+    var textArea = document.querySelector('.modal-body');
+    textArea.innerHTML = "The winner is " + indicatedSegment.text + " 🎉🎉"
+    $('.modal').modal('show');
     runConfetti();
-    alert("You have won " + indicatedSegment.text);
+    
+    //alert("You have won " + indicatedSegment.text);
   }
 }
 
 function runConfetti() {
-  // If set to true, the user must press
-  // UP UP DOWN ODWN LEFT RIGHT LEFT RIGHT A B
-  // to trigger the confetti with a random color theme.
-  // Otherwise the confetti constantly falls.
   var onlyOnKonami = false;
 
   $(function () {

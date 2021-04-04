@@ -51,12 +51,16 @@
 
 #spinningWheel {
   position: relative;
+  width: fit-content;
 }
 
 #wheel {
   display: block;
   color: blue;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  max-width: 600px;
 }
 
 #pointer {
