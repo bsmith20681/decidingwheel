@@ -13,7 +13,6 @@ function addEntry() {
 
     entryInput.value = "";
   }
-
   dragNdrop();
   createWheel();
 }
@@ -87,11 +86,17 @@ function deleteEntry(e) {
 }
 
 function createWheel() {
-  let entryArray = Array.from(document.querySelectorAll(".item")).map((x) => {
-    return {
-      text: x.innerHTML,
-    };
-  });
+  const wheelColors = ["#ffaaa7", "#ffd3b4", "#d5ecc2", "#98ddca"];
+  const randomNumber = Math.floor(Math.random() * 10 + 1);
+
+  let entryArray = Array.from(document.querySelectorAll(".item")).map(
+    (x, i) => {
+      return {
+        fillStyle: wheelColors[i % 4],
+        text: x.innerHTML,
+      };
+    }
+  );
 
   theWheel = new Winwheel({
     canvasId: "wheel",
@@ -99,26 +104,39 @@ function createWheel() {
     numSegments: entryArray.length,
     //outerRadius: 280,
     textFontSize: 28,
-    fillStyle: "#e7706f",
+
     strokeStyle: "#ffffff",
-
     segments: entryArray,
-
     animation: {
       type: "spinToStop",
       duration: 5,
       spins: 8,
       callbackFinished: alertPrize,
       callBackAfter: "drawTriangle()",
+      callbackSound: playSound,
     },
   });
 
+  let tickSound = new Audio("./tick.mp3");
+
+  function playSound() {
+    tickSound.pause();
+    tickSound.currentTime = 0;
+
+    tickSound.play();
+  }
+
   function alertPrize(indicatedSegment) {
-    var textArea = document.querySelector('.modal-body');
-    textArea.innerHTML = "The winner is " + indicatedSegment.text + " 🎉🎉"
-    $('.modal').modal('show');
+    let winSound = document.getElementById("winSound");
+    winSound.play();
+    var textArea = document.querySelector(".modal-body");
+    textArea.insertAdjacentHTML(
+      "beforeend",
+      `The winner is <strong>${indicatedSegment.text}</strong> 🎉🎉`
+    );
+    $(".modal").modal("show");
     runConfetti();
-    
+
     //alert("You have won " + indicatedSegment.text);
   }
 }
@@ -138,7 +156,7 @@ function runConfetti() {
       frame = undefined,
       confetti = [];
 
-    var runFor = 8000;
+    var runFor = 5000;
     var isRunning = true;
 
     setTimeout(() => {

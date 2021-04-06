@@ -63,6 +63,27 @@
   max-width: 600px;
 }
 
+#entries {
+  width: 100%;
+  max-height: 636px;
+  overflow: hidden auto;
+}
+
+#entries::-webkit-scrollbar {
+  width: 10px;
+}
+
+#entries::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px var(--dark-purple);
+  background-color: var(--dark-purple);
+  border-radius: 50px;
+}
+
+#entries::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 50px;
+}
+
 #pointer {
   width: 30px;
   transform: rotate(180deg);
