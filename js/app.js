@@ -24,52 +24,11 @@ function addEntry() {
 }
 
 function dragNdrop() {
-  //DRAG AND DROP
-  const draggables = document.querySelectorAll(".entry-item-container"),
-    container = document.getElementById("entries");
-
-  draggables.forEach((item) => {
-    item.addEventListener("dragstart", () => {
-      item.classList.add("dragging");
-    });
+  $("#entries").sortable({
+    placeholder: "ui-state-highlight",
+    stop: createWheel,
   });
-
-  draggables.forEach((item) => {
-    item.addEventListener("dragend", () => {
-      item.classList.remove("dragging");
-      createWheel();
-    });
-  });
-
-  container.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    const afterElement = getDragAfterElement(container, e.clientY);
-    const draggable = document.querySelector(".dragging");
-    if (afterElement == null) {
-      container.appendChild(draggable);
-    } else {
-      container.insertBefore(draggable, afterElement);
-    }
-  });
-}
-
-function getDragAfterElement(container, y) {
-  const draggableElements = [
-    ...container.querySelectorAll(".entry-item-container:not(.dragging)"),
-  ];
-
-  return draggableElements.reduce(
-    (closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
-      if (offset < 0 && offset > closest.offset) {
-        return { offset: offset, element: child };
-      } else {
-        return closest;
-      }
-    },
-    { offset: Number.NEGATIVE_INFINITY }
-  ).element;
+  $("#entries").disableSelection();
 }
 
 window.addEventListener("keydown", function (e) {
@@ -157,7 +116,6 @@ function createWheel() {
 }
 
 function removeTextFromModal() {
-  theWheel.stopAnimation();
   theWheel.rotationAngle = 0;
   theWheel.draw();
   $(".modal-body").empty();

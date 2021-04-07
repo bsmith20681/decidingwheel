@@ -9,8 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 0;
+  padding: 10px 0;
   max-width: 542px;
+  background-color: var(--light-purple);
+  border-radius: 5px;
 }
 
 .entry-item-text {
@@ -45,6 +47,12 @@
 }
 
 /*drag and drop*/
+.entry-item-container {
+  background-color: var(--light-purple);
+  max-width: 550px;
+  border-radius: 5px;
+}
+
 .entry-item-container.dragging {
   opacity: 0.5;
 }
@@ -63,9 +71,13 @@
   max-width: 600px;
 }
 
+#wheel:hover {
+  cursor: pointer;
+}
+
 #entries {
   width: 100%;
-  max-height: 636px;
+  max-height: 490px;
   overflow: hidden auto;
 }
 
@@ -101,6 +113,23 @@
   color: var(--dark-purple);
 }
 
+.btn-spin-wheel {
+  width: 95%;
+  position: absolute;
+  bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-spin-wheel {
+    position: static;
+    margin: 10px 0;
+  }
+}
+
 .btn-red {
   background-color: var(--hot-pink);
   color: white;
@@ -130,6 +159,7 @@ body {
 .wheel-area-background {
   background-color: var(--light-purple);
   border-radius: 30px;
+  position: relative;
 }
 
 .wheel-area {
@@ -166,4 +196,22 @@ form {
 
 .col-md-6 {
   margin-top: 10px;
+}
+
+.ui-state-highlight {
+  height: 40px;
+  line-height: 400px;
+  max-width: 550px;
+  background-color: var(--dark-purple);
+  border: none !important;
+}
+
+.ui-sortable-helper {
+  background-color: var(--dark-purple) !important;
+  color: var(--dark-purple) !important;
+  border: none !important;
+}
+
+.ui-sortable-placeholder {
+  border: none !important;
 }
