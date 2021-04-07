@@ -1,7 +1,13 @@
 function addEntry() {
   const entryInput = document.getElementById("entryInput"),
-    entryValue = entryInput.value,
     entryList = document.getElementById("entries");
+  let entryValue = entryInput.value;
+
+  console.log(entryValue.length > 13);
+
+  if (entryValue.length > 13) {
+    entryValue = entryValue.split("").splice(0, 13).join("") + "...";
+  }
 
   if (entryValue === "") {
     alert("You must enter something into the input field");
@@ -98,6 +104,17 @@ function createWheel() {
     }
   );
 
+  entryArray.length === 0
+    ? (entryArray = [
+        { fillStyle: "#ffaaa7", text: "Yes" },
+        { fillStyle: "#ffd3b4", text: "No" },
+        { fillStyle: "#d5ecc2", text: "Yes" },
+        { fillStyle: "#98ddca", text: "No" },
+        { fillStyle: "#ffaaa7", text: "Yes" },
+        { fillStyle: "#ffd3b4", text: "No" },
+      ])
+    : entryArray;
+
   theWheel = new Winwheel({
     canvasId: "wheel",
     responsive: true,
@@ -136,9 +153,14 @@ function createWheel() {
     );
     $(".modal").modal("show");
     runConfetti();
-
-    //alert("You have won " + indicatedSegment.text);
   }
+}
+
+function removeTextFromModal() {
+  theWheel.stopAnimation();
+  theWheel.rotationAngle = 0;
+  theWheel.draw();
+  $(".modal-body").empty();
 }
 
 function runConfetti() {

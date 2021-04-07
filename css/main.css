@@ -88,8 +88,11 @@
   width: 30px;
   transform: rotate(180deg);
   position: absolute;
-  top: 5px;
-  left: 48.4%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 3px;
 }
 
 /* buttons */
@@ -159,4 +162,8 @@ form {
   background-color: var(--dark-purple);
   border: none;
   color: white;
+}
+
+.col-md-6 {
+  margin-top: 10px;
 }
