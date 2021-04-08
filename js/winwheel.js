@@ -773,6 +773,7 @@ Winwheel.prototype.drawSegmentText = function () {
     let fillStyle;
     let strokeStyle;
     let lineWidth;
+    let shortText;
     let fontSetting;
 
     // Get the centerX and centerY scaled with the scale factor, also the same for outer and inner radius.
@@ -812,6 +813,8 @@ Winwheel.prototype.drawSegmentText = function () {
         else strokeStyle = this.textStrokeStyle;
         if (seg.textLineWidth !== null) lineWidth = seg.textLineWidth;
         else lineWidth = this.textLineWidth;
+        if (seg.shortText !== null) shortText = seg.shortText;
+        else shortText = this.shortText;
 
         // Scale the font size and the margin by the scale factor so the text can be responsive.
         fontSize = fontSize * this.scaleFactor;
@@ -839,8 +842,14 @@ Winwheel.prototype.drawSegmentText = function () {
         this.ctx.strokeStyle = strokeStyle;
         this.ctx.lineWidth = lineWidth;
 
+        let copiedSeg = { ...seg };
+
         // Split the text in to multiple lines on the \n character.
-        let lines = seg.text.split("\n");
+
+        let lines = copiedSeg.text.split("/n");
+
+        if (lines[0].length > 13)
+          lines = `${lines[0].split("").splice(0, 13).join("")}...`.split("/n");
 
         // Figure out the starting offset for the lines as when there are multiple lines need to center the text
         // vertically in the segment (when thinking of normal horozontal text).
@@ -2199,6 +2208,7 @@ function Segment(options) {
   let defaultOptions = {
     size: null, // Leave null for automatic. Valid values are degrees 0-360. Use percentToDegrees function if needed to convert.
     text: "", // Default is blank.
+    shortText: "", //use to bring in only shortened text to appear on wheel
     fillStyle: null, // If null for the rest the global default will be used.
     strokeStyle: null,
     lineWidth: null,

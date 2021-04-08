@@ -2,12 +2,10 @@ function addEntry() {
   const entryInput = document.getElementById("entryInput"),
     entryList = document.getElementById("entries");
   let entryValue = entryInput.value;
-
-  console.log(entryValue.length > 13);
-
+  /*
   if (entryValue.length > 13) {
     entryValue = entryValue.split("").splice(0, 13).join("") + "...";
-  }
+  }*/
 
   if (entryValue === "") {
     alert("You must enter something into the input field");
@@ -106,6 +104,7 @@ function createWheel() {
     let winSound = document.getElementById("winSound");
     winSound.play();
     var textArea = document.querySelector(".modal-body");
+    console.log(indicatedSegment);
     textArea.insertAdjacentHTML(
       "beforeend",
       `The winner is <strong>${indicatedSegment.text}</strong> 🎉🎉`
