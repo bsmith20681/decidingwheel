@@ -63,18 +63,22 @@ body {
   outline: 0 !important;
 }
 
+
 ul {
   padding-left: 2rem;
 }
+
 
 ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
+
 ul ul {
   margin-bottom: 0;
 }
+
 
 strong {
   font-weight: bolder;
@@ -93,6 +97,7 @@ a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
+
 
 code {
   font-family: var(--bs-font-monospace);
@@ -165,26 +170,31 @@ button:not(:disabled),
 }
 
 @media (min-width: 576px) {
+  
   .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
+  
   .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
+  
   .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
+  
   .container {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
+  
   .container {
     max-width: 1320px;
   }
@@ -207,6 +217,7 @@ button:not(:disabled),
   margin-top: var(--bs-gutter-y);
 }
 @media (min-width: 768px) {
+
   .col-md-6 {
     flex: 0 0 auto;
     width: 50%;
@@ -662,3 +673,9 @@ button:not(:disabled),
     transform: none;
   }
 }
+
+/* rtl:begin:remove */
+
+/* rtl:end:remove */
+
+/*# sourceMappingURL=bootstrap.css.map */

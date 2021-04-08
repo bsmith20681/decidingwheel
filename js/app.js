@@ -114,6 +114,10 @@ function createWheel() {
   }
 }
 
+$(window).bind("load", function () {
+  createWheel();
+});
+
 function removeTextFromModal() {
   theWheel.rotationAngle = 0;
   theWheel.draw();
