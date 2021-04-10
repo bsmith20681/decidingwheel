@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-194284254-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-194284254-1");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,40 +37,47 @@
     />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link
-    rel="stylesheet"
-    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-  />
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
 
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <header class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"><strong>SpinWheelMaker.com</strong></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLScu_bvkjw_kKsfjmUMIKVArPi_mY2BndpEBvIjvjEA9l78erQ/viewform"
-                >Feedback</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/"
+            ><strong>SpinWheelMaker.com</strong></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="#tutorial" class="nav-link">Tutorial</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScu_bvkjw_kKsfjmUMIKVArPi_mY2BndpEBvIjvjEA9l78erQ/viewform"
+                  >Feedback</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </header>
     <div class="wheel-area">
       <div class="container">
@@ -100,7 +121,58 @@
       </div>
     </div>
 
-    <footer></footer>
+    <article id="tutorial">
+      <div class="article container">
+        <div class="row">
+          <h1>Why use our spin wheel maker?</h1>
+          <p>
+            Spin wheel maker is a free easy to use tool that allows you to
+            create a random wheel spinner. You simply type in the names that you
+            want the wheel to pick from and it will randomly decide a name for
+            you. Our wheel is packed with fun animations and sounds to make your
+            game time experience fun and exciting!
+          </p>
+          <p>
+            Letting the wheel decide for you takes any bias out of your choices.
+          </p>
+          <p>You don't know where to eat?</p>
+          <p>You don't who to pick?</p>
+          <p>Let the wheel decide! It will make an hard decision easy.</p>
+          <h2>How does spin wheel randomly pick items?</h2>
+          <p>
+            Spin Wheel Maker is completely unbias towards any item placed within
+            it. It will programmatically pick a number between 1 and however
+            many items you have on the wheel. Each slice of the wheel is
+            programmed to have a number and will land on the number that was
+            picked by the computer.
+          </p>
+          <p>
+            Since the spinner is all done by the computer, you can have the
+            guarantee that it will remove any bias from your decision making.
+            You simple load up your items and spin the wheel to decide your
+            fate!
+          </p>
+        </div>
+      </div>
+    </article>
+    <script>
+      var year = (document.querySelector(
+        "#year"
+      ).innerHTML = new Date().getFullYear());
+    </script>
+    <footer class="container footer">
+      <div class="footer-white-line"></div>
+      <div class="footer-items">
+        <p>
+          Copyright © <span id="year"></span> spinwheelmaker.com All Rights
+          Reserved.
+        </p>
+        <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
+        <a class="footer-link" href="/terms-and-conditions.html"
+          >Terms and Conditions</a
+        >
+      </div>
+    </footer>
     <!--audio for winner-->
     <audio id="winSound">
           

@@ -5,6 +5,11 @@
   --hot-pink: #ef308f;
 }
 
+body {
+  background-color: var(--dark-purple);
+  font-family: "Poppins", sans-serif;
+}
+
 .entry-item {
   display: flex;
   align-items: center;
@@ -136,8 +141,8 @@
 }
 
 /* nav styles */
-body {
-  font-family: "Poppins", sans-serif;
+header {
+  background-color: white;
 }
 
 .navbar {
@@ -214,4 +219,50 @@ form {
 
 .ui-sortable-placeholder {
   border: none !important;
+}
+
+/** article **/
+.article {
+  background-color: var(--light-purple);
+  border-radius: 30px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.article h1,
+p,
+h2,
+h3,
+h4,
+li {
+  color: white;
+}
+
+/** footer **/
+.footer {
+  padding: 10px;
+}
+.footer-white-line {
+  margin-top: 20px;
+  border-bottom: 1px solid white;
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  padding-left: 15px;
+}
+
+.footer-link:hover {
+  color: white;
 }
