@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Ezoic Code -->
+    <script>
+      var ezoicId = 322222;
+    </script>
+    <script type="text/javascript" src="//go.ezoic.net/ezoic/ezoic.js"></script>
+    <!-- Ezoic Code -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-194284254-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-194284254-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -20,14 +23,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:url" content="https://spinwheelmaker.com/" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="Create a spinning wheel that will randomly pick a winner for you. Spin Wheel Maker is easy and free to use. You can make a hard choice easy by letting it decide for you at random."
-    />
-    <meta
-      property="og:image"
-      content="https://spinwheelmaker.com/spin-wheel-screenshot.png"
-    />
+    <meta property="og:description" content="Create a spinning wheel that will randomly pick a winner for you. Spin Wheel Maker is easy and free to use. You can make a hard choice easy by letting it decide for you at random." />
+    <meta property="og:image" content="https://spinwheelmaker.com/spin-wheel-screenshot.png" />
     <meta property="og:image:width" content="613" />
     <meta property="og:image:height" content="316" />
     <title>Spin Wheel Maker | Create a Free Random Spinning Wheel</title>
@@ -35,23 +32,10 @@
       name="description"
       content="SpinWheelMaker is a free to use tool that allows you to be able to create your own spinning wheel. You can easily add items and watch the wheel randomly select one of the items that you have chosen. This site is fast, easy to use, and comes featured with drag and drop functionality."
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon-32x32-clear.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon-16x16-clear.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32-clear.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16-clear.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -60,18 +44,8 @@
     <header>
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="/"
-            ><strong>SpinWheelMaker.com</strong></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <a class="navbar-brand" href="/"><strong>SpinWheelMaker.com</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -80,11 +54,7 @@
                 <a href="#tutorial" class="nav-link">Tutorial</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScu_bvkjw_kKsfjmUMIKVArPi_mY2BndpEBvIjvjEA9l78erQ/viewform"
-                  >Feedback</a
-                >
+                <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLScu_bvkjw_kKsfjmUMIKVArPi_mY2BndpEBvIjvjEA9l78erQ/viewform">Feedback</a>
               </li>
             </ul>
           </div>
@@ -97,37 +67,18 @@
           <div class="col-md-6">
             <div id="spinningWheel" class="wheel-area-background">
               <img id="pointer" src="/images/triangle.png" alt="pointer" />
-              <canvas
-                onClick="theWheel.startAnimation();"
-                id="wheel"
-                width="600"
-                height="600"
-                data-responsiveMinWidth="180"
-                data-responsiveScaleHeight="true"
-                data-responsiveMargin="50"
-              ></canvas>
+              <canvas onClick="theWheel.startAnimation();" id="wheel" width="600" height="600" data-responsiveMinWidth="180" data-responsiveScaleHeight="true" data-responsiveMargin="50"></canvas>
             </div>
           </div>
           <div class="col-md-6 wheel-area-background">
             <form>
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="entryInput"
-                  aria-describedby="emailHelp"
-                  placeholder="Enter Item"
-                />
+                <input type="text" class="form-control" id="entryInput" aria-describedby="emailHelp" placeholder="Enter Item" />
               </div>
               <a class="btn btn-white" onclick="addEntry()">Add Item</a>
             </form>
             <div id="entries"></div>
-            <a
-              onclick="theWheel.startAnimation();"
-              class="btn btn-white btn-spin-wheel"
-              onclick="addEntry()"
-              >Spin Wheel</a
-            >
+            <a onclick="theWheel.startAnimation();" class="btn btn-white btn-spin-wheel" onclick="addEntry()">Spin Wheel</a>
           </div>
         </div>
       </div>
@@ -138,95 +89,42 @@
         <div class="row">
           <h1>Why use our spin wheel maker?</h1>
           <p>
-            Spin wheel maker is a free easy to use tool that allows you to
-            create a random wheel spinner. You simply type in the names that you
-            want the wheel to pick from and it will randomly decide a name for
-            you. Our wheel is packed with fun animations and sounds to make your
-            game time experience fun and exciting!
+            Spin wheel maker is a free easy to use tool that allows you to create a random wheel spinner. You simply type in the names that you want the wheel to pick from and it will randomly decide a name for you. Our wheel is packed with fun animations and
+            sounds to make your game time experience fun and exciting!
           </p>
-          <p>
-            Letting the wheel decide for you takes any bias out of your choices.
-          </p>
+          <p>Letting the wheel decide for you takes any bias out of your choices.</p>
           <p>You don't know where to eat?</p>
           <p>You don't who to pick?</p>
           <p>Let the wheel decide! It will make an hard decision easy.</p>
           <h2>How does spin wheel randomly pick items?</h2>
           <p>
-            Spin Wheel Maker is completely unbias towards any item placed within
-            it. It will programmatically pick a number between 1 and however
-            many items you have on the wheel. Each slice of the wheel is
-            programmed to have a number and will land on the number that was
-            picked by the computer.
+            Spin Wheel Maker is completely unbias towards any item placed within it. It will programmatically pick a number between 1 and however many items you have on the wheel. Each slice of the wheel is programmed to have a number and will land on the
+            number that was picked by the computer.
           </p>
-          <p>
-            Since the spinner is all done by the computer, you can have the
-            guarantee that it will remove any bias from your decision making.
-            You simple load up your items and spin the wheel to decide your
-            fate!
-          </p>
+          <p>Since the spinner is all done by the computer, you can have the guarantee that it will remove any bias from your decision making. You simple load up your items and spin the wheel to decide your fate!</p>
           <h2>How do use spin wheel maker</h2>
-          <p>
-            Spin Wheel Maker is a free to use tool that can be used to generate
-            a random wheel on the fly. The best part is that it is super easy to
-            use!
-          </p>
-          <p>
-            You will first want to enter an item into the input field. You can
-            either click the button or simply press enter in order for the new
-            item to appear on the wheel.
-          </p>
-          <p>
-            The wheel will update as each item is added or deleted. You can add
-            as many options as you want. The more items the better!
-          </p>
-          <p>
-            If you ever want to rearrange the order in which the items are
-            positioned. You can simply grab it by pressing right click on your
-            mouse. As you hold the button, you will be giving the option to drag
-            and drop it in the order that you want.
-          </p>
-          <p>
-            As you rearrange the order, the wheel itself will update with that
-            order. This will prevent you from having to delete items and go back
-            in order to get a specific order.
-          </p>
-          <p>
-            When you are ready to spin the wheel, you can simply click spin
-            wheel button or just click on the wheel itself. It will spin a few
-            times and announce the winner on the popup.
-          </p>
-          <p>
-            To close the popup, you can either click on the button or the grey
-            background. When you close the popup, it will reset the wheel it's
-            original position.
-          </p>
+          <p>Spin Wheel Maker is a free to use tool that can be used to generate a random wheel on the fly. The best part is that it is super easy to use!</p>
+          <p>You will first want to enter an item into the input field. You can either click the button or simply press enter in order for the new item to appear on the wheel.</p>
+          <p>The wheel will update as each item is added or deleted. You can add as many options as you want. The more items the better!</p>
+          <p>If you ever want to rearrange the order in which the items are positioned. You can simply grab it by pressing right click on your mouse. As you hold the button, you will be giving the option to drag and drop it in the order that you want.</p>
+          <p>As you rearrange the order, the wheel itself will update with that order. This will prevent you from having to delete items and go back in order to get a specific order.</p>
+          <p>When you are ready to spin the wheel, you can simply click spin wheel button or just click on the wheel itself. It will spin a few times and announce the winner on the popup.</p>
+          <p>To close the popup, you can either click on the button or the grey background. When you close the popup, it will reset the wheel it's original position.</p>
           <h2>How to give feed back or request features</h2>
-          <p>
-            If you have an idea for this app, you can simply click on the
-            feedback tab and use the Google form to suggest any ideas. I am
-            always looking for ways to improve it so I am all ears to any
-            suggestions!
-          </p>
+          <p>If you have an idea for this app, you can simply click on the feedback tab and use the Google form to suggest any ideas. I am always looking for ways to improve it so I am all ears to any suggestions!</p>
           <p>Happy spinning!!</p>
         </div>
       </div>
     </article>
     <script>
-      var year = (document.querySelector(
-        "#year"
-      ).innerHTML = new Date().getFullYear());
+      var year = (document.querySelector("#year").innerHTML = new Date().getFullYear());
     </script>
     <footer class="container footer">
       <div class="footer-white-line"></div>
       <div class="footer-items">
-        <p>
-          Copyright © <span id="year"></span> spinwheelmaker.com All Rights
-          Reserved.
-        </p>
+        <p>Copyright © <span id="year"></span> spinwheelmaker.com All Rights Reserved.</p>
         <a class="footer-link" href="/privacy-policy.html">Privacy Policy</a>
-        <a class="footer-link" href="/terms-and-conditions.html"
-          >Terms and Conditions</a
-        >
+        <a class="footer-link" href="/terms-and-conditions.html">Terms and Conditions</a>
       </div>
     </footer>
     <!--audio for winner-->
@@ -236,37 +134,17 @@
     </audio>
 
     <!-- Modal -->
-    <div
-      onclick="removeTextFromModal()"
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
+    <div onclick="removeTextFromModal()" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body"></div>
           <div class="modal-footer">
-            <button
-              onclick="removeTextFromModal()"
-              type="button"
-              class="btn btn-primary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
+            <button onclick="removeTextFromModal()" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -277,16 +155,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/touch-punch.js"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="/js/app.js"></script>
 
-    <script
-      src="https://kit.fontawesome.com/78ae06e93a.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/78ae06e93a.js" crossorigin="anonymous"></script>
   </body>
 </html>
